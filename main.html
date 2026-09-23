@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Cards Gallery</title>
 
-    <!-- Bootstrap CDN -->
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         rel="stylesheet"
@@ -19,6 +17,7 @@
         }
 
         .card img {
+            width: 100%;
             height: 180px;
             object-fit: cover;
             cursor: pointer;
@@ -29,29 +28,48 @@
             text-align: center;
         }
 
-        .lightbox {
+        #lightbox {
             display: none;
             position: fixed;
-            z-index: 9999;
             inset: 0;
             background: rgba(0, 0, 0, 0.85);
-            justify-content: center;
+            z-index: 9999;
             align-items: center;
+            justify-content: center;
         }
 
-        .lightbox img {
-            max-width: 80%;
+        #lightbox img {
+            max-width: 75%;
             max-height: 80%;
             border-radius: 8px;
         }
 
-        .close {
+        #close {
             position: absolute;
             top: 20px;
-            right: 35px;
+            right: 30px;
             color: white;
             font-size: 40px;
             cursor: pointer;
+        }
+
+        .prev,
+        .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 45px;
+            cursor: pointer;
+            padding: 15px;
+        }
+
+        .prev {
+            left: 20px;
+        }
+
+        .next {
+            right: 20px;
         }
     </style>
 </head>
@@ -65,73 +83,136 @@
     <div class="row g-3">
 
         <!-- Card 1 -->
-        <div class="col-md-4">
-            <div class="card">
-                <img src="https://picsum.photos/600/400?random=1"
-                     onclick="openLightbox(this.src)">
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="card h-100">
+                <img
+                    src="https://storage.googleapis.com/acciojob-open-file-collections/image1.jpg"
+                    onclick="openLightbox(0)"
+                    alt="Image 1"
+                >
                 <div class="card-body">
-                    <h6>Mountain</h6>
-                    <p>Beautiful mountain view.</p>
+                    <h6>Mountain View</h6>
+                    <p>Beautiful snowy mountain landscape.</p>
                 </div>
             </div>
         </div>
 
         <!-- Card 2 -->
-        <div class="col-md-4">
-            <div class="card">
-                <img src="https://picsum.photos/600/400?random=2"
-                     onclick="openLightbox(this.src)">
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="card h-100">
+                <img
+                    src="https://storage.googleapis.com/acciojob-open-file-collections/image2.jpg"
+                    onclick="openLightbox(1)"
+                    alt="Image 2"
+                >
                 <div class="card-body">
                     <h6>Nature</h6>
-                    <p>Peaceful natural scenery.</p>
+                    <p>A peaceful and beautiful natural view.</p>
                 </div>
             </div>
         </div>
 
         <!-- Card 3 -->
-        <div class="col-md-4">
-            <div class="card">
-                <img src="https://picsum.photos/600/400?random=3"
-                     onclick="openLightbox(this.src)">
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="card h-100">
+                <img
+                    src="https://storage.googleapis.com/acciojob-open-file-collections/image3.jpg"
+                    onclick="openLightbox(2)"
+                    alt="Image 3"
+                >
                 <div class="card-body">
-                    <h6>Forest</h6>
-                    <p>Green and beautiful forest.</p>
+                    <h6>Landscape</h6>
+                    <p>A stunning landscape surrounded by nature.</p>
                 </div>
             </div>
         </div>
 
         <!-- Card 4 -->
-        <div class="col-md-4">
-            <div class="card">
-                <img src="https://picsum.photos/600/400?random=4"
-                     onclick="openLightbox(this.src)">
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="card h-100">
+                <img
+                    src="https://storage.googleapis.com/acciojob-open-file-collections/image4.jpg"
+                    onclick="openLightbox(3)"
+                    alt="Image 4"
+                >
                 <div class="card-body">
-                    <h6>Lake</h6>
-                    <p>Calm and beautiful lake.</p>
+                    <h6>Scenery</h6>
+                    <p>A beautiful scenic view of the mountains.</p>
                 </div>
             </div>
         </div>
 
         <!-- Card 5 -->
-        <div class="col-md-4">
-            <div class="card">
-                <img src="https://picsum.photos/600/400?random=5"
-                     onclick="openLightbox(this.src)">
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="card h-100">
+                <img
+                    src="https://storage.googleapis.com/acciojob-open-file-collections/image5.jpg"
+                    onclick="openLightbox(4)"
+                    alt="Image 5"
+                >
                 <div class="card-body">
-                    <h6>Landscape</h6>
-                    <p>Amazing landscape view.</p>
+                    <h6>Adventure</h6>
+                    <p>An amazing destination for exploration.</p>
                 </div>
             </div>
         </div>
 
         <!-- Card 6 -->
-        <div class="col-md-4">
-            <div class="card">
-                <img src="https://picsum.photos/600/400?random=6"
-                     onclick="openLightbox(this.src)">
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="card h-100">
+                <img
+                    src="https://storage.googleapis.com/acciojob-open-file-collections/image6.jpg"
+                    onclick="openLightbox(5)"
+                    alt="Image 6"
+                >
                 <div class="card-body">
-                    <h6>Scenery</h6>
-                    <p>Beautiful scenic view.</p>
+                    <h6>Travel</h6>
+                    <p>A wonderful place to enjoy your journey.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="card h-100">
+                <img
+                    src="https://storage.googleapis.com/acciojob-open-file-collections/image7.jpg"
+                    onclick="openLightbox(6)"
+                    alt="Image 7"
+                >
+                <div class="card-body">
+                    <h6>Beautiful View</h6>
+                    <p>A relaxing view surrounded by nature.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="card h-100">
+                <img
+                    src="https://storage.googleapis.com/acciojob-open-file-collections/image8.jpg"
+                    onclick="openLightbox(7)"
+                    alt="Image 8"
+                >
+                <div class="card-body">
+                    <h6>Scenic Place</h6>
+                    <p>A wonderful scenic destination.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="card h-100">
+                <img
+                    src="https://storage.googleapis.com/acciojob-open-file-collections/image9.jpg"
+                    onclick="openLightbox(8)"
+                    alt="Image 9"
+                >
+                <div class="card-body">
+                    <h6>Ocean View</h6>
+                    <p>A breathtaking view of mountains and ocean.</p>
                 </div>
             </div>
         </div>
@@ -141,21 +222,57 @@
 
 
 <!-- Lightbox -->
-<div class="lightbox" id="lightbox" onclick="closeLightbox()">
-    <span class="close">&times;</span>
-    <img id="lightboxImage" src="">
+<div id="lightbox">
+
+    <span id="close" onclick="closeLightbox()">&times;</span>
+
+    <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+
+    <img id="lightboxImage" src="" alt="Large Image">
+
+    <span class="next" onclick="changeImage(1)">&#10095;</span>
+
 </div>
 
 
 <script>
-function openLightbox(image) {
-    document.getElementById("lightbox").style.display = "flex";
-    document.getElementById("lightboxImage").src = image;
-}
+    const images = [
+        "https://storage.googleapis.com/acciojob-open-file-collections/image1.jpg",
+        "https://storage.googleapis.com/acciojob-open-file-collections/image2.jpg",
+        "https://storage.googleapis.com/acciojob-open-file-collections/image3.jpg",
+        "https://storage.googleapis.com/acciojob-open-file-collections/image4.jpg",
+        "https://storage.googleapis.com/acciojob-open-file-collections/image5.jpg",
+        "https://storage.googleapis.com/acciojob-open-file-collections/image6.jpg",
+        "https://storage.googleapis.com/acciojob-open-file-collections/image7.jpg",
+        "https://storage.googleapis.com/acciojob-open-file-collections/image8.jpg",
+        "https://storage.googleapis.com/acciojob-open-file-collections/image9.jpg"
+    ];
 
-function closeLightbox() {
-    document.getElementById("lightbox").style.display = "none";
-}
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+        currentIndex = index;
+        document.getElementById("lightboxImage").src = images[currentIndex];
+        document.getElementById("lightbox").style.display = "flex";
+    }
+
+    function closeLightbox() {
+        document.getElementById("lightbox").style.display = "none";
+    }
+
+    function changeImage(direction) {
+        currentIndex += direction;
+
+        if (currentIndex < 0) {
+            currentIndex = images.length - 1;
+        }
+
+        if (currentIndex >= images.length) {
+            currentIndex = 0;
+        }
+
+        document.getElementById("lightboxImage").src = images[currentIndex];
+    }
 </script>
 
 </body>
